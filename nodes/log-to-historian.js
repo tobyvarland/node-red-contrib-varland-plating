@@ -1,15 +1,15 @@
 module.exports = function(RED) {
 
-  const GroovHistorian = require("../lib/groov-historian")
+  const GroovHistorian = require("../lib/groov-historian");
 
   function LogToHistorianNode(config) {
 
-    RED.nodes.createNode(this, config)
+    RED.nodes.createNode(this, config);
 
-    this.groovController = RED.nodes.getNode(config.groovController)
-    this.influxDB = RED.nodes.getNode(config.influxDB)
+    this.groovController = RED.nodes.getNode(config.groovController);
+    this.influxDB = RED.nodes.getNode(config.influxDB);
 
-    var node = this
+    var node = this;
 
     node.on('input', function(msg) {
 
@@ -23,14 +23,14 @@ module.exports = function(RED) {
       }, {
         apiKey: node.groovController.apiKey,
         hostname: node.groovController.hostname
-      })
-      historian.historize()
+      });
+      historian.historize();
 
-      node.send(msg)
+      node.send(msg);
 
     })
   }
   RED.nodes.registerType("log to historian",
-                         LogToHistorianNode)
+                         LogToHistorianNode);
 
 }
