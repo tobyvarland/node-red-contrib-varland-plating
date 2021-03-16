@@ -1,0 +1,67 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('set variable', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" },
+      variableName: { value: "", required: true },
+      variableNameType: { value: "msg" },
+      variableValue: {value: "", required: true },
+      variableValueType: { value: "msg" }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "set variable"
+    },
+    oneditprepare: function() {
+      if (!this.variableName) this.variableName = "variableName"
+      if (!this.variableNameType) this.variableNameType = "msg"
+      if (!this.variableValue) this.variableValue = "variableValue"
+      if (!this.variableValueType) this.variableValueType = "msg"
+      $("#node-input-variableName").typedInput({
+        default: "msg",
+        types: ["msg", "str"],
+        typeField: $("#node-input-variableNameType")
+      })
+      $("#node-input-variableValue").typedInput({
+        default: "msg",
+        types: ["msg", "str", "num", "bool"],
+        typeField: $("#node-input-variableValueType")
+      })
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="set variable">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableName"><i class="fa fa-tag"></i> Variable Name</label>
+    <input type="text" id="node-input-variableName">
+    <input type="hidden" id="node-input-variableNameType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableValue"><i class="fa fa-tag"></i> Variable Value</label>
+    <input type="text" id="node-input-variableValue">
+    <input type="hidden" id="node-input-variableValueType">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="set variable">
+
+  <p>Used to dynamically set a variable value after determining the variable type based on the variable name. The variable name may be passed in as a string or a message property. The variable value may be passed in as a string, number, boolean, or message property.</p>
+
+</script>

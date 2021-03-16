@@ -1,0 +1,63 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('get variable', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" },
+      variableName: { value: "", required: true },
+      variableNameType: { value: "msg" },
+      variableValue: {value: "", required: true }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "get variable"
+    },
+    oneditprepare: function() {
+      if (!this.variableName) this.variableName = "variableName"
+      if (!this.variableNameType) this.variableNameType = "msg"
+      if (!this.variableValue) this.variableValue = "variableValue"
+      $("#node-input-variableName").typedInput({
+        default: "msg",
+        types: ["msg", "str"],
+        typeField: $("#node-input-variableNameType")
+      })
+      $("#node-input-variableValue").typedInput({
+        default: "msg",
+        types: ["msg"]
+      })
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="get variable">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableName"><i class="fa fa-tag"></i> Variable Name</label>
+    <input type="text" id="node-input-variableName">
+    <input type="hidden" id="node-input-variableNameType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableValue"><i class="fa fa-tag"></i> Store In</label>
+    <input type="text" id="node-input-variableValue">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="get variable">
+
+  <p>Used to dynamically read a variable value after determining the variable type based on the variable name. The variable name may be passed in as a string or a message property, and the variable value is returned to a specified message property.</p>
+
+</script>

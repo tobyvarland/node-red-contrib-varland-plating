@@ -1,0 +1,42 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('log to historian', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" },
+      influxDB: { value: "", type: "varland influxdb" }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "log to historian"
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="log to historian">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+  <div class="form-row">
+    <label for="node-input-influxDB"><i class="fa fa-tag"></i> InfluxDB</label>
+    <input type="text" id="node-input-influxDB">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="log to historian">
+
+  <p>Checks the strategy for all variables meeting the definition of historian variables (all I/O and variables using the <code>h</code> prefix) and logs the values to the given InfluxDB historian.</p>
+
+</script>

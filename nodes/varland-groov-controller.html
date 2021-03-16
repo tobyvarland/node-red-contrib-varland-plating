@@ -1,0 +1,29 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('varland groov controller', {
+    category: 'config',
+    color: '#e9967a',
+    defaults: {
+      hostname: { value: "localhost", required: true },
+      apiKey: { required: true }
+    },
+    icon: "varland.png",
+    label: function() {
+      return this.hostname
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="varland groov controller">
+
+  <div class="form-row">
+    <label for="node-config-input-hostname"><i class="fa fa-bookmark"></i> Groov EPIC Hostname</label>
+    <input type="text" id="node-config-input-hostname">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-apiKey"><i class="fa fa-bookmark"></i> Groov EPIC API Key</label>
+    <input type="text" id="node-config-input-apiKey">
+  </div>
+
+</script>

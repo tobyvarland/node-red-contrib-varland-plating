@@ -1,0 +1,39 @@
+{
+  "name": "node-red-contrib-varland-plating",
+  "version": "1.0.0",
+  "description": "Node-RED nodes used by Varland Plating with Opto22 Groov EPIC PR-1 processors for in-house automation projects.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobyvarland/node-red-contrib-varland-plating.git"
+  },
+  "keywords": [
+    "node-red",
+    "varland"
+  ],
+  "author": {
+    "name": "Toby Varland",
+    "email": "toby.varland@varland.com"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tobyvarland/node-red-contrib-varland-plating/issues"
+  },
+  "homepage": "https://github.com/tobyvarland/node-red-contrib-varland-plating#readme",
+  "node-red": {
+    "nodes": {
+      "varland groov controller": "nodes/varland-groov-controller.js",
+      "varland influxdb": "nodes/varland-influxdb.js",
+      "get variable": "nodes/get-variable.js",
+      "set variable": "nodes/set-variable.js",
+      "preserve recipe data": "nodes/preserve-recipe-data.js",
+      "process historic logs": "nodes/process-historic-logs.js",
+      "log to historian": "nodes/log-to-historian.js"
+    }
+  },
+  "dependencies": {
+    "influxdb-v2": "^1.0.0"
+  }
+}

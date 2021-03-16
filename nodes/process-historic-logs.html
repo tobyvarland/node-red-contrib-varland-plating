@@ -1,0 +1,37 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('process historic logs', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "process historic logs"
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="process historic logs">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="process historic logs">
+
+  <p>Checks the strategy for all variables meeting the defintion of historic log triggers and triggers the log if the trigger is set to true.</p>
+
+</script>

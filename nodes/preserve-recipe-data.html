@@ -1,0 +1,37 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('preserve recipe data', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "preserve recipe data"
+    }
+  })
+
+</script>
+
+<script type="text/html" data-template-name="preserve recipe data">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="preserve recipe data">
+
+  <p>Immediately after a download, retrieves variable values from backup files and sets the variable values in the controller. After retrieving all saved values, sets flags to send node into save mode. In save mode, periodically overwrites the backup file for each recipe file.</p>
+
+</script>
