@@ -14,14 +14,16 @@ module.exports = function(RED) {
 
       node.status({
         fill: "green",
-        shape:"dot",
-        text:"connected"
+        shape: "dot",
+        text: "processing"
       });
 
       GroovLog.processLogs({
         apiKey: node.groovController.apiKey,
         hostname: node.groovController.hostname
       });
+
+      node.status({});
 
       node.send(msg);
 

@@ -15,8 +15,8 @@ module.exports = function(RED) {
 
       node.status({
         fill: "green",
-        shape:"dot",
-        text:"connected"
+        shape: "dot",
+        text: "processing"
       });
 
       const historian = new GroovHistorian({
@@ -31,6 +31,8 @@ module.exports = function(RED) {
         hostname: node.groovController.hostname
       });
       historian.historize();
+
+      node.status({});
 
       node.send(msg);
 

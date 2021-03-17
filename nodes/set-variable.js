@@ -18,8 +18,8 @@ module.exports = function(RED) {
 
       node.status({
         fill: "green",
-        shape:"dot",
-        text:"connected"
+        shape: "dot",
+        text: "processing"
       });
 
       const groov = new GroovClient({
@@ -37,6 +37,8 @@ module.exports = function(RED) {
                                                           msg);
 
       groov.setVariable(variableName, variableValue);
+
+      node.status({});
 
       node.send(msg);
 

@@ -14,8 +14,8 @@ module.exports = function(RED) {
 
       node.status({
         fill: "green",
-        shape:"dot",
-        text:"connected"
+        shape: "dot",
+        text: "processing"
       });
 
       const preserver = new GroovPreserver({
@@ -23,6 +23,8 @@ module.exports = function(RED) {
         hostname: node.groovController.hostname
       });
       preserver.process();
+
+      node.status({});
 
       node.send(msg);
 
