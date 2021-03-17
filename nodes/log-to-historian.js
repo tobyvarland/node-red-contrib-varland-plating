@@ -13,6 +13,12 @@ module.exports = function(RED) {
 
     node.on('input', function(msg) {
 
+      node.status({
+        fill: "green",
+        shape:"dot",
+        text:"connected"
+      });
+
       const historian = new GroovHistorian({
         hostname: node.influxDB.hostname,
         protocol: node.influxDB.protocol,
