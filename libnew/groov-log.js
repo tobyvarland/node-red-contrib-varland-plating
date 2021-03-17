@@ -71,7 +71,7 @@ class GroovLog {
     }
 
     // Post to logging app.
-    GroovLog.postLog(JSON.stringify(JSON.stringify(json)))
+    GroovLog.postLog(JSON.stringify(json))
 
     // Reset trigger.
     this.groov.setInteger(this.variable.name, false)
