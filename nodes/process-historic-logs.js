@@ -12,11 +12,7 @@ module.exports = function(RED) {
 
     node.on('input', function(msg) {
 
-      node.status({
-        fill: "green",
-        shape: "dot",
-        text: "processing"
-      });
+      node.status({ fill: "green", shape: "dot", text: "processing" });
 
       GroovLog.processLogs({
         apiKey: node.groovController.apiKey,

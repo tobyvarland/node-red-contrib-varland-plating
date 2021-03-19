@@ -16,11 +16,7 @@ module.exports = function(RED) {
 
     node.on('input', function(msg) {
 
-      node.status({
-        fill: "green",
-        shape: "dot",
-        text: "processing"
-      });
+      node.status({ fill: "green", shape: "dot", text: "processing" });
 
       const groov = new GroovClient({
         apiKey: node.groovController.apiKey,

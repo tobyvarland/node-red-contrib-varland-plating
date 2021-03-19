@@ -30,7 +30,8 @@
       "set variable": "nodes/set-variable.js",
       "preserve recipe data": "nodes/preserve-recipe-data.js",
       "process historic logs": "nodes/process-historic-logs.js",
-      "log to historian": "nodes/log-to-historian.js"
+      "log to historian": "nodes/log-to-historian.js",
+      "get variables by regexp": "nodes/get-by-regexp.js"
     }
   },
   "dependencies": {

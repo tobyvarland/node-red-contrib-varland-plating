@@ -1,0 +1,79 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('get variables by regexp', {
+    category: 'varland',
+    color: '#df151a',
+    defaults: {
+      name: { value: "" },
+      groovController: { value: "", type: "varland groov controller" },
+      variableType: { value: "", required: true },
+      variableNameRegexp: { value: "", required: true },
+      variableNameRegexpType: { value: "msg" },
+      variableList: { value: "", required: true }
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+      return this.name || "get variables by regexp"
+    },
+    oneditprepare: function() {
+      if (!this.variableNameRegexpType) this.variableNameRegexpType = "msg"
+      $("#node-input-variableNameRegexp").typedInput({
+        default: "msg",
+        types: ["msg", "str"],
+        typeField: $("#node-input-variableNameRegexpType")
+      })
+      $("#node-input-variableList").typedInput({
+        default: "msg",
+        types: ["msg"]
+      })
+    }
+  });
+
+</script>
+
+<script type="text/html" data-template-name="get variables by regexp">
+
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-groovController"><i class="fa fa-tag"></i> Groov Controller</label>
+    <input type="text" id="node-input-groovController">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableType"><i class="fa fa-tag"></i> Variable Type</label>
+    <select id="node-input-variableType">
+      <option value="analog_input">Analog Input</option>
+      <option value="analog_output">Analog Output</option>
+      <option value="digital_input">Digital Input</option>
+      <option value="digital_output">Digital Output</option>
+      <option value="down_timer">Down Timer</option>
+      <option value="float">Float</option>
+      <option value="float_table">Float Table</option>
+      <option value="int32">Integer</option>
+      <option value="int32_table">Integer Table</option>
+      <option value="string">String</option>
+      <option value="string_table">String Table</option>
+      <option value="up_timer">Up Timer</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableNameRegexp"><i class="fa fa-tag"></i> Name Regexp</label>
+    <input type="text" id="node-input-variableNameRegexp">
+    <input type="hidden" id="node-input-variableNameRegexpType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableList"><i class="fa fa-tag"></i> Store In</label>
+    <input type="text" id="node-input-variableList">
+  </div>
+
+</script>
+
+<script type="text/html" data-help-name="get variables by regexp">
+
+  <p>Help&hellip;</p>
+
+</script>
