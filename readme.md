@@ -30,3 +30,6 @@ All functions are specifically tailored to Varland based on internal variable na
 
 - **`process historic logs`**  
   Checks the strategy for all variables meeting the defintion of historic log triggers and triggers the log if the trigger is set to true.
+
+- **`get variables by regexp`**  
+  Used to return values of all variables of selected type whose name matches the supplied regular expression.
