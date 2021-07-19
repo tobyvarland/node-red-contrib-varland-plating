@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-varland-plating",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Node-RED nodes used by Varland Plating with Opto22 Groov EPIC PR-1 processors for in-house automation projects.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
