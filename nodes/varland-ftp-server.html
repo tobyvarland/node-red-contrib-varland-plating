@@ -1,0 +1,39 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('varland ftp server', {
+    category: 'config',
+    color: '#df151a',
+    defaults: {
+      hostname: { value: "synology.varland.com", required: true },
+      username: { value: "varland", required: true },
+      password: { required: true },
+      rootPath: { value: "/volume1/GroovRecipes", required: true }
+    },
+    icon: "varland.png",
+    label: function() {
+      return this.hostname
+    }
+  });
+
+</script>
+
+<script type="text/html" data-template-name="varland ftp server">
+
+  <div class="form-row">
+    <label for="node-config-input-hostname"><i class="fa fa-bookmark"></i> FTP Server Hostname</label>
+    <input type="text" id="node-config-input-hostname">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-username"><i class="fa fa-bookmark"></i> FTP Server Username</label>
+    <input type="text" id="node-config-input-username">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-password"><i class="fa fa-bookmark"></i> FTP Server Password</label>
+    <input type="password" id="node-config-input-password">
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-rootPath"><i class="fa fa-bookmark"></i> FTP Root Directory</label>
+    <input type="text" id="node-config-input-rootPath">
+  </div>
+
+</script>
