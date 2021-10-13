@@ -3,13 +3,10 @@
   RED.nodes.registerType('varland ftp server', {
     category: 'config',
     color: '#df151a',
-    credentials: {
-      username: { type: "text" },
-      password: { type: "password" }
-    },
     defaults: {
       hostname: { value: "synology.varland.com", required: true },
-      rootPath: { value: "/volume1/GroovRecipes", required: true }
+      username: { value: "varland", required: true },
+      password: { value: "", required: true }
     },
     icon: "varland.png",
     label: function() {
@@ -32,10 +29,6 @@
   <div class="form-row">
     <label for="node-config-input-password"><i class="fa fa-bookmark"></i> FTP Server Password</label>
     <input type="password" id="node-config-input-password">
-  </div>
-  <div class="form-row">
-    <label for="node-config-input-rootPath"><i class="fa fa-bookmark"></i> FTP Root Directory</label>
-    <input type="text" id="node-config-input-rootPath">
   </div>
 
 </script>

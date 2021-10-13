@@ -26,6 +26,7 @@
     "nodes": {
       "varland groov controller": "nodes/varland-groov-controller.js",
       "varland influxdb": "nodes/varland-influxdb.js",
+      "varland ftp server": "nodes/varland-ftp-server.js",
       "get variable": "nodes/get-variable.js",
       "set variable": "nodes/set-variable.js",
       "preserve recipe data": "nodes/preserve-recipe-data.js",
@@ -35,6 +36,7 @@
     }
   },
   "dependencies": {
+    "basic-ftp": "^4.6.6",
     "influxdb-v2": "^1.0.0"
   }
 }
