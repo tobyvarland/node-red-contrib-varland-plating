@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "basic-ftp": "^4.6.6",
-    "influxdb-v2": "^1.0.0",
-    "node-scp": "0.0.15"
+    "influxdb-v2": "^1.0.0"
   }
 }
