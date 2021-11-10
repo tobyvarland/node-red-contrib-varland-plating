@@ -13,9 +13,6 @@ All functions are specifically tailored to Varland based on internal variable na
   
 - **`varland influxdb`**  
   Used to define a connection to an InfluxDB v2+ historian database. Uses the `influxdb-v2` package sponsored by Stackhero.
-  
-- **`varland groov ftp server`**  
-  Used to define a FTP server where recipe files should be synced.
 
 ### Normal Nodes
 
